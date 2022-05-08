@@ -1,0 +1,52 @@
+<h1>SHOPPING CART</h1>
+
+<div class="error" *ngIf="errors"> {{error}}</div>
+<table>
+    <tr>
+        <th></th>
+        <th>Product</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Total</th>
+    </tr>
+    <tr *ngFor="let product of cartproducts">
+        <td class="container">
+            <div >
+                <img class="card-img-top" [src]="'data:image/jpg;base64,' + product.base64Image | safeHtml"
+                    alt="profile">
+            </div>
+        </td>
+        <td>
+            <h5 class="card-title">{{product.name | uppercase}}</h5>
+        </td>
+        <td>{{product.amount}} {{product.measurementUnit | titlecase }}(s)</td>
+        <td>R$ {{product.price | number : '1.2-2' }}</td>
+        <td>R$ {{product.priceTotal | number : '1.2-2' }}</td>
+        <p style="display: none;">{{product.id}}</p>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td> </td>
+        <td></td>
+        <td></td>
+        <td>R$ {{productTotal | number : '1.2-2'}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td> </td>
+        <td></td>
+        <td></td>
+        <td>
+            <form class="form-inline" action="/action_page.php" #zipCodeForm="ngForm"
+                (ngSubmit)="checkOut(zipCodeForm.value)">
+                <label for="amount">ZipCode: </label>
+                <input type="text" name="zipCode" ngModel #zipCode="ngModel" minlength="8" maxlength="8" required
+                    [class.is-invalid]="zipCode.invalid && zipCode.touched">
+                <button type="submit" [disabled]="zipCodeForm.form.invalid">
+                    Check Out</button>
+            </form>
+
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,132 @@
+.error{
+    color: #630505;
+    font-size: 150%;
+    font-weight: 900;
+    margin-top: 3%;
+  }
+  
+h1{
+    padding-top: 1%;
+    color:#2E3D33;
+    text-align: center;
+    line-height: 150%;
+    text-transform: uppercase;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label{
+    display: block;
+    text-align: left;
+    line-height: 100%;
+    font-size: large;
+    align-items: center;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+input:required:focus {
+    border-color: #2E3D33;
+  }
+  
+  input:invalid:focus {
+    border-color: #2E3D33;
+    border-width: 3px;
+  }
+
+.form-group{
+    padding-bottom: 2%;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: #585651;
+}
+
+input{
+    background-color: #e0d0b5;
+    opacity: 0.8;
+    text-align: center;
+    line-height: 150%;
+    margin-right: 5%;
+    appearance: none;
+    background-color: none;
+    border: 1px solid #515136;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #515136;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #515136;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #515136;
+  }
+
+input:focus{
+    outline: none;
+    background: #C2B49B;
+    color: white;
+}
+
+button{
+    margin-left: 8%;
+    background-color:#515136;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    border: 1px solid #2E3D33;
+    line-height: 0.5;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px ;
+    border-radius: 60px;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+button:disabled{
+    margin-left: 8%;
+    padding:1%;
+    background-color:#515136;
+    color:whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    border: 1px solid #2E3D33;
+    line-height: 0.5;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px ;
+    border-radius: 60px;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+.form{
+    height: 10%;
+    margin-left: 6%;
+    width: 88%;
+    padding-top: 1%;
+    padding-bottom: 20%;
+    background-color: #f5eee1;
+    border:  1px solid #2E3D33;
+}

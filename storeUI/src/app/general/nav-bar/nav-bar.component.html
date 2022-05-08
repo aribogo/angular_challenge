@@ -1,0 +1,21 @@
+<div class="topnav" id="myTopnav">
+  <a id="home" [routerLink]="['']" class="active">Home</a>
+  <a id="home" *ngIf="isLoggedIn" [routerLink]="['/register']">Sell a Product
+  </a>
+
+  <div *ngIf="!isLoggedIn" class="loggedOut">
+    <a [routerLink]="['/signup']" class="mx-auto">Sign Up</a>
+    <a [routerLink]="['/login']" class="nav-link">Login</a>
+  </div>
+
+  <div class="loggedIn" *ngIf="isLoggedIn">
+    <a href="#" class="nav-link" routerLink="profile">{{ username }}</a>
+    <a href class="nav-link" (click)="logout()">LogOut</a>
+  </div>
+
+  <a id="navProducts" [routerLink]="['/orders']" *ngIf="isLoggedIn">Orders</a>
+  <a id="image" *ngIf="isLoggedIn" [routerLink]="['/shopping-cart']"><img
+      src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/60/ffffff/external-shopping-cart-cyber-monday-vitaliy-gorbachev-fill-vitaly-gorbachev.png"
+      alt="Shopping Cart" style="width:150%;height:25px;">
+  </a>
+</div>

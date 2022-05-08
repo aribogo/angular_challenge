@@ -1,0 +1,47 @@
+  h1{
+    color: #2E3D33;
+          font-size: 200%;
+          font-weight: 900;
+          margin-top: 3%;
+  }
+  
+  img{
+      width: 15%;
+  }
+  
+  table {
+      margin-top:3%;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      
+      text-align: left;
+      padding: 8px;
+    
+    }
+    
+    tr:nth-child(even) {
+      background-color: #2E3D33;
+      color:whitesmoke;
+    }
+  
+    #myDIV {
+      width: 100%;
+      padding: 50px 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #746A3C; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }

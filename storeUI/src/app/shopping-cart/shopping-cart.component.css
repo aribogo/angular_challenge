@@ -1,0 +1,83 @@
+.error{
+  color: #630505;
+  font-size: 150%;
+  font-weight: 900;
+  margin-top: 3%;
+}
+
+h1{
+  color: #2E3D33;
+        font-size: 200%;
+        font-weight: 900;
+        margin-top: 3%;
+}
+
+.container img {
+  width: 30%;
+  height: auto;
+}
+
+table {
+    margin-top:3%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #2E3D33;
+    text-align: left;
+    padding: 8px;
+  
+  }
+  
+  tr:nth-child(even) {
+    background-color: #2E3D33;
+    color:whitesmoke;
+  }
+
+
+  .form-inline {  
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    float: inline-start;
+  }
+  
+  .form-inline label {
+    margin: 5px 10px 5px 0;
+    display: inline-block;
+    text-align: left;
+    line-height: 100%;
+    font-size: medium;
+    font-weight: bold;
+    align-items: center;
+    color:whitesmoke;
+  }
+  
+  .form-inline input {
+    vertical-align: middle;
+    margin: 5px 5px 5px 0;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .form-inline button {
+    padding: 15px 10px;
+    background-color: #746A3C;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 800px) {
+    .form-inline input {
+      margin: 10px 0;
+    }
+    
+    .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }

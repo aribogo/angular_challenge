@@ -1,0 +1,49 @@
+<h1>Orders</h1>
+<table>
+    <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>ZipCode</th>
+        <th>Details</th>
+    </tr>
+    <tr *ngFor="let sale of sales" class="card">
+
+        <td>Sale {{sale.id}}
+        </td>
+        <td>{{sale.saleDate | date :'dd/MM/yyyy'}}</td>
+        <td> R$ {{sale.totalAmount | number : '1.2-2' }}</td>
+        <td>{{sale.zipCode}}</td>
+        <td>
+
+            <table *ngIf="showProduct && sale.id == idDetail">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Price (unit)</th>
+                    <th>Total</th>
+                </tr>
+                <tr *ngFor="let saleItem of saleItems">
+                    <td>
+                        <div class="container">
+                            <img class="card-img-top"
+                                [src]="'data:image/jpg;base64,' + saleItem.product.base64Image | safeHtml"
+                                alt="profile"
+                                style="width: 40%; height: 120px; object-fit: contain;">
+                        </div>
+                    </td>
+                    <td>
+                        <h5 class="card-title">{{saleItem.product.name | uppercase}}</h5>
+                    </td>
+                    <td>{{saleItem.productAmount}} </td>
+                    <td>R$ {{saleItem.product.price | number : '1.2-2' }}</td>
+                    <td>R$ {{saleItem.totalCost | number : '1.2-2' }}</td>
+                </tr>
+            </table>
+            <button (click)="myFunction(sale.id)">Details</button>
+
+        </td>
+
+    </tr>
+</table>

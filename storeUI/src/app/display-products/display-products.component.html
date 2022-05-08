@@ -1,0 +1,47 @@
+<div class="error" *ngIf="errors"> {{error}}</div>
+<div *ngFor="let product of products" class="card">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div id="container">
+
+        <div class="product-details">
+
+            <h5>{{product.name | uppercase}}</h5>
+            <p class="information">{{product.description | titlecase }}</p>
+
+
+            <h4 class="card-text" *ngIf="product.productStock === 0">Sold Out</h4>
+
+            <div class="control" *ngIf="product.productStock > 0">
+                <form class="form-inline" action="/action_page.php" #productQuantity="ngForm"
+                    (ngSubmit)="AddToCart(productQuantity.value, product)">
+                    <label for="amount">AMOUNT: </label>
+                    <input type="number" id="quantity" name="quantity" ngModel #quantity="ngModel" min=1
+                        max="{{product.productStock}}" required [class.is-invalid]="quantity.invalid">
+                    <button type="submit" [disabled]="productQuantity.form.invalid">
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        Add To Cart</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="product-image">
+
+            <img [src]="'data:image/jpg;base64,' + product.base64Image | safeHtml" alt="profile">
+
+
+            <div class="info">
+                <h2> Description</h2>
+                <ul>
+                    <li><strong>Price : </strong>R$ {{product.price | number : '1.2-2' }} </li>
+                    <li><strong>measurement Unit : </strong>{{product.measurementUnit | titlecase }} </li>
+                    <li><strong>Stock : </strong>{{product.productStock}} {{product.measurementUnit | titlecase }}s</li>
+                    <p style="display: none;">{{product.id}}</p>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

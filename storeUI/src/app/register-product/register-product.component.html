@@ -1,0 +1,99 @@
+<div class="error" *ngIf="errors"> {{error}}</div>
+<div class="container-fluid">
+  <div class="form">
+    <h1>Sell Product</h1>
+    <form #productForm="ngForm" *ngIf="!submitted" (ngSubmit)="registerProduct(productForm.value)" novalidate>
+
+      <div class="form-group">
+        <label>Product's Name</label>
+        <br/>
+        <input 
+        class="form-control"
+        type="text" 
+        ngModel
+        #name="ngModel"
+        name="name" 
+        placeholder="Enter name"
+        required
+        [class.is-invalid]="name.invalid && name.touched"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Product's Description</label>
+        <br/>
+        <input 
+        class="form-control"
+        type="text" 
+        required
+        ngModel 
+        #description="ngModel"
+        name="description" 
+        placeholder="Enter description"
+        [class.is-invalid]="description.invalid && description.touched">
+      </div>
+
+      <div class="form-group">
+        <label>Measurement Unit</label>
+        <br/>
+        <input 
+        class="form-control"
+        type="text" 
+        required
+        ngModel 
+        #measurementUnit="ngModel"
+        name="measurementUnit" 
+        placeholder="Example: kilograms, liter, units"
+        [class.is-invalid]="measurementUnit.invalid && measurementUnit.touched">
+      </div>
+
+      <div class="form-group">
+        <label>Product's price</label>
+        <br/>
+        <input 
+        class="form-control"
+        type="number" 
+        required
+        ngModel 
+        #price="ngModel"
+        name="price" 
+        placeholder="Enter product's price"
+        [class.is-invalid]="price.invalid && price.touched">
+      </div>
+
+      <div class="form-group">
+        <label>How many do you have in stock?</label>
+        <br/>
+        <input 
+        class="form-control"
+        type="number" 
+        required
+        ngModel 
+        #productStock="ngModel"
+        name="productStock" 
+        placeholder="Enter your stock of this product"
+        [class.is-invalid]="productStock.invalid && productStock.touched">
+      </div>
+
+      <div class="form-group">
+        <label>Product's image</label>
+        <input 
+        class="form-control"
+        type="file" 
+        name="base64Image" 
+        required
+        ngModel 
+        #base64Image="ngModel"
+        accept="image/jpeg"
+        (change)="handleFileSelect($event)"
+        >
+      </div>
+
+      <div class="container">
+        <div class="vertical-center">
+        <button [disabled]="productForm.form.invalid" type="submit">Register Product</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
